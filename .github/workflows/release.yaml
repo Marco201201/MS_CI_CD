@@ -19,8 +19,9 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - run:  chmod +x gradlew
+      - run: zip -r grade_example.zip build/libs          
+      - uses: ncipollo/release-action@v1
         with:
-          prerelease: false
-          files: |
-            build/libs/gralde_example.jar
+          artifacts: "grade_example.zip"
+          bodyFile: "body.md"
