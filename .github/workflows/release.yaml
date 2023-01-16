@@ -19,9 +19,8 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
-      - run:  chmod +x gradlew
       - run: zip -r grade_example.zip build/libs          
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "grade_example.zip"
-          bodyFile: "body.md"
+          bodyFile: "README.md"
