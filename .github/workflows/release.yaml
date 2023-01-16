@@ -1,10 +1,10 @@
-name: publish_Release
+name: publish_release
 on:
   push:
     tags:
       - 'v*'
 jobs:
-  gradle-build:
+  publish_release:
     runs-on: ubuntu-latest
     steps:    
       - uses: actions/checkout@v3
